@@ -64,8 +64,8 @@
 		font-family: 'Source Sans Pro', sans-serif;
 		font-size: 19pt;
 		font-weight: 300;
-		line-height: 1.75em;
-		color: #888;
+		line-height: 1.5em;
+		color: #666;
 
 		&.is-loading * {
 			@include vendor('transition', 'none !important');
@@ -77,13 +77,13 @@
 		font-family: 'Source Sans Pro', sans-serif;
 		font-size: 19pt;
 		font-weight: 300;
-		line-height: 1.75em;
-		color: #888;
+		line-height: 1.5em;
+		color: #666;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 300;
-		color: #666;
+		color: #444;
 		line-height: 1.5em;
 	}
 
@@ -92,7 +92,7 @@
 		text-decoration: none;
 
 		strong {
-			color: #333;
+			color: #222;
 		}
 	}
 
@@ -111,6 +111,11 @@
 		> p {
 			margin: 1em 0 0 0;
 		}
+
+		strong, b {
+			color: inherit;
+			font-weight: 700;
+		}
 	}
 
 	footer {
@@ -118,8 +123,8 @@
 	}
 
 	strong, b {
-		font-weight: 300;
-		color: #666;
+		font-weight: 500;
+		color: #222;
 	}
 
 	em, i {
@@ -128,14 +133,14 @@
 
 	a {
 		text-decoration: none;
-		color: inherit;
-		border-bottom: dotted 1px rgba(128, 128, 128, 0.5);
+		color: #44e;
+		border-bottom: dotted 1px rgba(68, 68, 224, 0.5);
 		@include vendor('transition', ('color 0.35s ease-in-out', 'border-bottom-color 0.35s ease-in-out'));
 		outline: 0;
 
 		&:hover {
 			color: #E27689;
-			border-bottom-color: rgba(255, 255, 255, 0);
+			border-bottom-color: #E27689;
 		}
 	}
 
@@ -162,6 +167,7 @@
 		border-radius: 4px;
 		font-family: "Courier New", monospace;
 		font-size: 0.9em;
+		color: #444;
 		padding: 0.25em 0.325em;
 	}
 
@@ -171,6 +177,7 @@
 		font-size: 0.9em;
 		tab-size: 4;
 		margin: 0 0 2em 0;
+		color: #444;
 		code {
 			display: block;
 			line-height: 1.5;
@@ -190,10 +197,18 @@
 		margin-bottom: 2em;
 	}
 
+	#publications {
+		.container {
+			p, ul, ol, dl, table {
+				margin-bottom: 1em;
+			}
+		}
+	}
+
 	dl {
 		dt {
 			font-weight: 300;
-			color: #666;
+			color: #444;
 		}
 		dd {
 			margin-left: 1em
@@ -338,7 +353,7 @@
 			background: rgba(255, 255, 255, 0.75);
 			width: 100%;
 			border-radius: 0.35em;
-			padding: 0.75em 1em 0.75em 1em;
+			padding: 0.5em 1em 0.75em 1em;
 			box-shadow: inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.05);
 			border: solid 1px rgba(0, 0, 0, 0.15);
 			@include vendor('transition', 'all 0.35s ease-in-out');
@@ -361,23 +376,23 @@
 		}
 
 		.formerize-placeholder {
-			color: #555 !important;
+			color: #888 !important;
 		}
 
 		::-webkit-input-placeholder {
-			color: #555 !important;
+			color: #888 !important;
 		}
 
 		:-moz-placeholder {
-			color: #555 !important;
+			color: #888 !important;
 		}
 
 		::-moz-placeholder {
-			color: #555 !important;
+			color: #888 !important;
 		}
 
 		:-ms-input-placeholder {
-			color: #555 !important;
+			color: #888 !important;
 		}
 
 		::-moz-focus-inner {
@@ -432,7 +447,7 @@
 		border-radius: 0.35em;
 		color: #fff !important;
 		text-decoration: none;
-		padding: 0.75em 2.5em 0.75em 2.5em;
+		padding: 0.5em 1.5em 0.5em 1.5em;
 		background-color: #8ebebc;
 		border: 0;
 		cursor: pointer;
@@ -488,7 +503,7 @@
 		@include vendor('display', 'flex');
 		@include vendor('flex-direction', 'column');
 		@include vendor('justify-content', 'space-between');
-		background: #222629 url('images/overlay.png');
+		background: #222629 url('../images/overlay.png');
 		box-shadow: inset -0.25em 0 0.25em 0 rgba(0, 0, 0, 0.1);
 		color: #fff;
 		height: 100%;
@@ -644,6 +659,41 @@
 		margin-left: 375px;
 		> section {
 			text-align: center;
+
+			&#publications, &#students-needed {
+				text-align: left;
+				header {
+					text-align: center;
+				}
+			}
+			&#projects, &#students-needed {
+				header {
+					background-color: #222629;
+					background-size: cover;
+					height: 150px;
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					h2 {
+						color: rgba(255, 255, 255, 0.75);
+					}
+				}
+			}
+			&#projects {
+				header {
+					background-image: url('../images/web-cat-banner-bg.png');
+				}
+			}
+			&#students-needed {
+				header {
+					color: white;
+					font-weight: 400;
+					background-image: url('../images/code-banner-bg.png');
+					text-align: right;
+					padding-right: 2em;
+				}
+			}
 		}
 		> article {
 			text-align: left;
@@ -661,7 +711,6 @@
 			background-image: url('images/overlay.png');
 
 			&.dark {
-				color: #ddd;
 				color: rgba(255, 255, 255, 0.75);
 
 				h2, h3, h4, h5, h6 {
@@ -781,7 +830,7 @@
 		/* Basic */
 
 			body, input, textarea, select {
-				font-size: 16pt;
+				font-size: 15pt;
 			}
 
 			.container {
@@ -871,7 +920,7 @@
 			}
 
 			body, input, textarea, select {
-				font-size: 16pt;
+				font-size: 14pt;
 			}
 
 			header {
