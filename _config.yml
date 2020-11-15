@@ -40,7 +40,7 @@ email: edwards@cs.vt.edu
 avatar: https://s.gravatar.com/avatar/573ae6313cf4c77a9e44e805a8b74098?s=80
 
 # You'll want to customize url and baseurl for your own site:
-baseurl: "/~edwards" # the subpath of your site, e.g. /blog
+baseurl: "" # "/~edwards" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 
 # Social settings
